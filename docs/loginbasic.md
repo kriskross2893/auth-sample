@@ -17,7 +17,7 @@ This authentication is the most basic and should not be used in real life situat
 - **Error Response**
   - Code: 401
   - Content: `{message: 'Unauthorized'}`
-- **Sample Call**
+- **Sample Call** (javascript)
 
 ```javascript
   let response = await fetch('/login-basic', {
@@ -32,7 +32,11 @@ This authentication is the most basic and should not be used in real life situat
   });
 ```
 
+- **Sample Call** (python)
+
 ```python
+  import requests
+
   jsonInput = {'username': 'sampleUser', 'password': 'samplePass'}
   response = requests.post('/login-basic',json=jsonInput)
 ```

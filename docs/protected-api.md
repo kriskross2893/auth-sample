@@ -20,7 +20,7 @@ their authentication scheme.
 - **Error Response**
   - Code: 404
   - Content: `{message: 'Not Found'}`
-- **Sample Call**
+- **Sample Call** (javascript)
 
 ```javascript
   // basic authentication using base64
@@ -33,6 +33,8 @@ their authentication scheme.
     }
   });
 ```
+
+- **Sample Call** (python)
 
 ```python
   # basic authentication using base64

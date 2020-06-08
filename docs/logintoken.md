@@ -17,7 +17,7 @@ It will return a token which you should send to the protected API end points.
 - **Error Response**
   - Code: 401
   - Content: `{message: 'Unauthorized'}`
-- **Sample Call**
+- **Sample Call** (javascript)
 
 ```javascript
   let response = await fetch('/login-token', {
@@ -32,7 +32,11 @@ It will return a token which you should send to the protected API end points.
   });
 ```
 
+- **Sample Call** (python)
+
 ```python
+  import requests
+
   jsonInput = {'username': 'sampleUser', 'password': 'samplePass'}
   response = requests.post('/login-token',json=jsonInput)
 ```
