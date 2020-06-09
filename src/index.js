@@ -25,6 +25,9 @@ const user = 'sampleUser';
 const pass = 'samplePass';
 const xAuth = '12345thisIsMyToken';
 
+/**
+ * Basic login. No one should use this
+ */
 app.post('/login-basic', function(req, res) {
   const {
     username,
@@ -38,6 +41,9 @@ app.post('/login-basic', function(req, res) {
   }
 });
 
+/**
+ * Some de-facto login implementation where they will encode your token using jsonwebtoken implementation
+ */
 app.post('/login-token', function(req, res) {
   const {
     username,
@@ -53,13 +59,16 @@ app.post('/login-token', function(req, res) {
   }
 });
 
+/**
+ * The api to access using the token recieved previously from the login-token endpoint
+ */
 app.get('/protected-api', function(req, res) {
   const {
     authorization,
     'x-auth-token': xAuthToken
   } = req.headers;
 
-  const [type, token] = atob(authorization).split(' ');
+  const [type, token] = authorization.split(' ');
   try {
     if (type === 'Basic') {
       const [username, password] = atob(token).split(':');
