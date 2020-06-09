@@ -20,7 +20,8 @@ This authentication is the most basic and should not be used in real life situat
 - **Sample Call** (javascript)
 
 ```javascript
-  let response = await fetch('/login-basic', {
+  let response = await fetch(
+    'https://auth-sample-nodejs.herokuapp.com/login-basic', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
@@ -37,6 +38,12 @@ This authentication is the most basic and should not be used in real life situat
 ```python
   import requests
 
-  jsonInput = {'username': 'sampleUser', 'password': 'samplePass'}
-  response = requests.post('/login-basic',json=jsonInput)
+  jsonInput = {
+      'username': 'sampleUser',
+      'password': 'samplePass'
+  }
+  response = requests.post(
+      'https://auth-sample-nodejs.herokuapp.com/login-basic',
+      json=jsonInput
+  )
 ```
