@@ -25,7 +25,8 @@ their authentication scheme.
 ```javascript
   // basic authentication using base64
   const token = atob('sampleUser:samplePass')
-  let response = await fetch('/protected-api', {
+  let response = await fetch('
+    https://auth-sample-nodejs.herokuapp.com/protected-api', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json;charset=utf-8',
@@ -44,6 +45,13 @@ their authentication scheme.
   data = 'sampleUser:samplePass'
   token = base64.b64encode(data.encode("utf-8"))
   token = str(token, "utf-8")
-  headers = {'Authorization': 'Basic ' + token, 'Content-Type': 'application/json;charset=utf-8'}
-  response = requests.get('/protected-api',params={}, headers=headers)
+  headers = {
+      'Authorization': 'Basic ' + token,
+      'Content-Type': 'application/json;charset=utf-8'
+  }
+  response = requests.get(
+      'https://auth-sample-nodejs.herokuapp.com/protected-api',
+      params={},
+      headers=headers
+  )
 ```

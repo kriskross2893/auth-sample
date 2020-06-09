@@ -20,7 +20,8 @@ It will return a token which you should send to the protected API end points.
 - **Sample Call** (javascript)
 
 ```javascript
-  let response = await fetch('/login-token', {
+  let response = await fetch(
+    'https://auth-sample-nodejs.herokuapp.com/login-token', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
@@ -37,6 +38,12 @@ It will return a token which you should send to the protected API end points.
 ```python
   import requests
 
-  jsonInput = {'username': 'sampleUser', 'password': 'samplePass'}
-  response = requests.post('/login-token',json=jsonInput)
+  jsonInput = {
+      'username': 'sampleUser',
+      'password': 'samplePass'
+  }
+  response = requests.post(
+      'https://auth-sample-nodejs.herokuapp.com/login-token',
+      json=jsonInput
+  )
 ```
