@@ -39,10 +39,11 @@ their authentication scheme.
 ```python
   # basic authentication using base64
   import base64
+  import requests
 
   data = 'sampleUser:samplePass'
   token = base64.b64encode(data.encode("utf-8"))
   token = str(token, "utf-8")
   headers = {'Authorization': 'Basic ' + token, 'Content-Type': 'application/json;charset=utf-8'}
-  response = requests.get('/login-token',headers=headers)
+  response = requests.get('/protected-api',params={}, headers=headers)
 ```
