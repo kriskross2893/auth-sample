@@ -25,8 +25,8 @@ their authentication scheme.
 ```javascript
   // basic authentication using base64
   const token = atob('sampleUser:samplePass')
-  let response = await fetch('
-    https://auth-sample-nodejs.herokuapp.com/protected-api', {
+  let response = await fetch(
+    'https://auth-sample-nodejs.herokuapp.com/protected-api', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json;charset=utf-8',
